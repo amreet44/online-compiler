@@ -1,17 +1,17 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import IndexComponent from "./component/index"; // Import your index.jsx file
+import { Route, Routes, Navigate } from "react-router-dom";
+import Main from "./component/Main";
+import Signup from "./component/signup";
+import Login from "./component/login";
 
 function App() {
+  const user = localStorage.getItem("token");
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/index" component={IndexComponent} />
-          {/* Other routes */}
-        </Switch>
-      </div>
-    </Router>
+    <Routes>
+      {user && <Route path="/" exact element={<Main />} />}
+      <Route path="/signup" exact element={<Signup />} />
+      <Route path="/login" exact element={<Login />} />
+      <Route path="/" exact element={<Navigate replace to="/login" />} />
+    </Routes>
   );
 }
 
