@@ -5,6 +5,7 @@ const connection = require("./db");
 const cors = require("cors");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
+const genRoutes = require("./routes/gen");
 
 connection();
 
@@ -14,6 +15,7 @@ app.use(cors());
 
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/gen", genRoutes);
 
 const port = process.env.PORT || 8080;
 
