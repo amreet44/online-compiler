@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import styles from './styles.module.css';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import styles from "./styles.module.css";
 
 const Signup = () => {
   const [data, setData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
   });
   const navigate = useNavigate();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
@@ -19,14 +19,18 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('reached here');
+    console.log("reached here");
     try {
-      const url = 'https://localhost:8080/api/users';
+      const url = "https://localhost:8080/api/users";
       const response = await axios.post(url, data);
-      navigate('/login');
+      navigate("/login");
       console.log(response.data.message);
     } catch (err) {
-      if (err.response && err.response.status >= 400 && err.response.status <= 500) {
+      if (
+        err.response &&
+        err.response.status >= 400 &&
+        err.response.status <= 500
+      ) {
         setError(err.response.data.message);
       }
     }

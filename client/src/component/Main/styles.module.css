@@ -1,27 +1,94 @@
+.main_container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .navbar {
-	width: 100%;
-	height: 70px;
-	background-color: #3bb19b;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  background-color: #3bb19b;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.code_container {
+  display: flex;
+}
+
+.left_container {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+}
+
+.right_container {
+  flex: 2;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
 }
 
 .navbar h1 {
-	color: white;
-	font-size: 25px;
-	margin-left: 20px;
+  color: white;
+  font-size: 25px;
+  margin-left: 20px;
 }
 
 .white_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	background-color: white;
-	border-radius: 20px;
-	width: 120px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	margin-right: 20px;
+  border: none;
+  outline: none;
+  padding: 12px 0;
+  background-color: white;
+  border-radius: 20px;
+  width: 120px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 20px;
+  border-color: #3bb19b;
+}
+
+.select_box {
+  width: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  align-items: center;
+  justify-content: center;
+}
+
+.select_box option {
+  /* Add your styles for the <option> elements here */
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  /* Other styles as needed */
+}
+
+.outputbox {
+  margin-top: 15px;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  border: 1px solid rgb(89, 89, 89);
+  font-family: "Roboto", sans-serif;
+}
+
+.textarea {
+  height: 300px;
+}
+
+.submit_button {
+  border: solid;
+  outline: none;
+  padding: 12px 0;
+  background-color: white;
+  border-radius: 20px;
+  width: 120px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 20px;
+  border-color: #3bb19b;
 }
