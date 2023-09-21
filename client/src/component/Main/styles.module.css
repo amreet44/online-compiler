@@ -12,6 +12,7 @@
 }
 
 .code_container {
+  flex: 1;
   display: flex;
 }
 
@@ -20,6 +21,8 @@
   padding: 20px;
   border: 1px solid #ccc;
   background-color: #f7f7f7;
+  /* You can add min-width to ensure a minimum width for the left container */
+  min-width: 200px; /* Adjust as needed */
 }
 
 .right_container {
@@ -76,19 +79,38 @@
 }
 
 .textarea {
-  height: 300px;
+  width: 100%; /* Use 100% width to make the textarea expand with the container */
+  height: 100%;
+  resize: both; /* Allow users to resize the textarea if needed */
 }
 
 .submit_button {
   border: solid;
   outline: none;
-  padding: 12px 0;
+  padding: 10px 0;
   background-color: white;
   border-radius: 20px;
   width: 120px;
   font-weight: bold;
   font-size: 14px;
   cursor: pointer;
-  margin-right: 20px;
+  margin-top: 10px;
   border-color: #3bb19b;
+}
+
+/* styles.module.css */
+.selected_question {
+  color: #3bb19b; /* Change this to your desired highlight style */
+  font-weight: bold; /* Change this to your desired highlight style */
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+}
+
+li {
+  cursor: pointer; /* Change cursor to pointer for clickable items */
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-bottom: 10px;
 }

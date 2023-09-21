@@ -8,16 +8,28 @@ const Main = () => {
     window.location.reload();
   };
 
-  const questions = [
-    "Add two numbers",
-    // Add more questions as needed
-  ];
+  const template = `#include <iostream>
+  using namespace std;
+  
+  int main() {
+    // Write your code here
+    return 0;
+  }`;
 
-  const [code, setCode] = useState("");
+  const [questions, setQuestions] = useState([
+    { title: "Add two numbers", code: template },
+    { title: "multiply two numbers", code: template },
+  ]);
+
   const [output, setOutput] = useState("");
+  // use state to keep track of the question selected
+  const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(0);
 
   const handleSubmit = async () => {
-    const payload = { language: "cpp", code };
+    const payload = {
+      language: "cpp",
+      code: questions[selectedQuestionIndex].code,
+    };
 
     try {
       const { data } = await axios.post(
@@ -48,7 +60,18 @@ const Main = () => {
           <h2>List of Questions</h2>
           <ul>
             {questions.map((question, index) => (
-              <li key={index}>{question}</li>
+              // dynamic className kept to apply Css on selected question
+              <li
+                key={index}
+                className={
+                  selectedQuestionIndex === index
+                    ? styles.selected_question
+                    : ""
+                }
+                onClick={() => setSelectedQuestionIndex(index)}
+              >
+                {question.title}
+              </li>
             ))}
           </ul>
         </div>
@@ -57,9 +80,11 @@ const Main = () => {
             rows="20"
             cols="75"
             className={styles.textarea}
-            value={code}
+            value={questions[selectedQuestionIndex].code}
             onChange={(e) => {
-              setCode(e.target.value);
+              const newQuestion = [...questions];
+              newQuestion[selectedQuestionIndex].code = e.target.value;
+              setQuestions(newQuestion);
             }}
           ></textarea>
           <button className={styles.submit_button} onClick={handleSubmit}>
