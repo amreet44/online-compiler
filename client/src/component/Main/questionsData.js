@@ -1,0 +1,98 @@
+import { useState } from "react";
+
+const useQuestionsData = () => {
+  const [questions, setQuestions] = useState([
+    {
+      title: "Add two numbers",
+      text: "Given two numbers, give the result of their sum",
+      code: `#include <iostream>
+      #include <vector>
+      #include <sstream>
+      
+      using namespace std;
+      
+      int helper(int x, int y) {
+        // User's code logic here
+        
+      }
+      
+      int main() {
+        // Test Cases
+        cout << "Test Cases:" << endl;
+        vector<pair<string, string>> testCases = {
+          {"2 3", "5"},
+          {"4 8", "12"},
+        };
+      
+        for (const auto& testCase : testCases) {
+          string input = testCase.first;
+          string expectedOutput = testCase.second;
+      
+          int x, y;
+          istringstream iss(input);
+          iss >> x >> y;
+      
+          // Call the helper function with test case input
+          int testCaseResult = helper(x, y);
+      
+          // Compare the result with the expected output
+          if (testCaseResult == stoi(expectedOutput)) {
+            cout << "Input: " << input << ", Output: " << testCaseResult << " (Passed)" << endl;
+          } else {
+            cout << "Input: " << input << ", Output: " << testCaseResult << " (Failed, Expected: " << expectedOutput << ")" << endl;
+          }
+        }
+      
+        return 0;
+      }`,
+    },
+    {
+      title: "multiply two numbers",
+      text: "Given two numbers, give the result of their sum",
+      code: `#include <iostream>
+      #include <vector>
+      #include <sstream>
+      
+      using namespace std;
+      
+      int helper(int x, int y) {
+        // User's code logic here
+        
+      }
+      
+      int main() {
+        // Test Cases
+        cout << "Test Cases:" << endl;
+        vector<pair<string, string>> testCases = {
+          {"2 3", "5"},
+          {"4 8", "12"},
+        };
+      
+        for (const auto& testCase : testCases) {
+          string input = testCase.first;
+          string expectedOutput = testCase.second;
+      
+          int x, y;
+          istringstream iss(input);
+          iss >> x >> y;
+      
+          // Call the helper function with test case input
+          int testCaseResult = helper(x, y);
+      
+          // Compare the result with the expected output
+          if (testCaseResult == stoi(expectedOutput)) {
+            cout << "Input: " << input << ", Output: " << testCaseResult << " (Passed)" << endl;
+          } else {
+            cout << "Input: " << input << ", Output: " << testCaseResult << " (Failed, Expected: " << expectedOutput << ")" << endl;
+          }
+        }
+      
+        return 0;
+      }`,
+    },
+  ]);
+
+  return [questions, setQuestions];
+};
+
+export default useQuestionsData;

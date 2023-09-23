@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import { useState } from "react";
 import axios from "axios";
+import useQuestionsData from "./questionsData";
 
 const Main = () => {
   const handleLogout = () => {
@@ -8,22 +9,10 @@ const Main = () => {
     window.location.reload();
   };
 
-  const template = `#include <iostream>
-  using namespace std;
-  
-  int main() {
-    // Write your code here
-    return 0;
-  }`;
-
-  const [questions, setQuestions] = useState([
-    { title: "Add two numbers", code: template },
-    { title: "multiply two numbers", code: template },
-  ]);
-
   const [output, setOutput] = useState("");
   // use state to keep track of the question selected
   const [selectedQuestionIndex, setSelectedQuestionIndex] = useState(0);
+  const [questions, setQuestions] = useQuestionsData();
 
   const handleSubmit = async () => {
     const payload = {
