@@ -6,17 +6,17 @@ const useQuestionsData = () => {
       title: "Add two numbers",
       text: "Given two numbers, give the result of their sum",
       code: `#include <iostream>
-      #include <vector>
-      #include <sstream>
+#include <sstream>
+#include <vector>
+using namespace std;
       
-      using namespace std;
-      
-      int helper(int x, int y) {
-        // User's code logic here
+     
+int helper(int x, int y) {
+// Write your code here 
         
-      }
-      
-      int main() {
+}
+      `,
+      executionCode: `int main() {
         // Test Cases
         cout << "Test Cases:" << endl;
         vector<pair<string, string>> testCases = {
@@ -32,40 +32,42 @@ const useQuestionsData = () => {
           istringstream iss(input);
           iss >> x >> y;
       
-          // Call the helper function with test case input
-          int testCaseResult = helper(x, y);
+          // Call the user's helper function with test case input
+          int userResult = helper(x, y);
       
           // Compare the result with the expected output
-          if (testCaseResult == stoi(expectedOutput)) {
-            cout << "Input: " << input << ", Output: " << testCaseResult << " (Passed)" << endl;
+          if (userResult == stoi(expectedOutput)) {
+            cout << "Input: " << input << ", Output: " << userResult << " (Passed)" << endl;
           } else {
-            cout << "Input: " << input << ", Output: " << testCaseResult << " (Failed, Expected: " << expectedOutput << ")" << endl;
+            cout << "Input: " << input << ", Output: " << userResult << " (Failed, Expected: " << expectedOutput << ")" << endl;
           }
         }
       
         return 0;
-      }`,
+      }
+      `,
     },
     {
       title: "multiply two numbers",
       text: "Given two numbers, give the result of their sum",
       code: `#include <iostream>
-      #include <vector>
-      #include <sstream>
+#include <sstream>
+#include <vector>
+
+using namespace std;
       
-      using namespace std;
       
-      int helper(int x, int y) {
-        // User's code logic here
+int helper(int x, int y) {
+  // User's code logic here
         
-      }
-      
-      int main() {
+}
+      `,
+      executionCode: `int main() {
         // Test Cases
         cout << "Test Cases:" << endl;
         vector<pair<string, string>> testCases = {
-          {"2 3", "5"},
-          {"4 8", "12"},
+          {"2 3", "6"},
+          {"4 8", "32"},
         };
       
         for (const auto& testCase : testCases) {
@@ -76,19 +78,20 @@ const useQuestionsData = () => {
           istringstream iss(input);
           iss >> x >> y;
       
-          // Call the helper function with test case input
-          int testCaseResult = helper(x, y);
+          // Call the user's helper function with test case input
+          int userResult = helper(x, y);
       
           // Compare the result with the expected output
-          if (testCaseResult == stoi(expectedOutput)) {
-            cout << "Input: " << input << ", Output: " << testCaseResult << " (Passed)" << endl;
+          if (userResult == stoi(expectedOutput)) {
+            cout << "Input: " << input << ", Output: " << userResult << " (Passed)" << endl;
           } else {
-            cout << "Input: " << input << ", Output: " << testCaseResult << " (Failed, Expected: " << expectedOutput << ")" << endl;
+            cout << "Input: " << input << ", Output: " << userResult << " (Failed, Expected: " << expectedOutput << ")" << endl;
           }
         }
       
         return 0;
-      }`,
+      }
+      `,
     },
   ]);
 

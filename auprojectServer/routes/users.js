@@ -1,9 +1,10 @@
 const router = require("express").Router();
 const { User, validate } = require("../models/user");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 router.post("/", async (req, res) => {
   console.log("Request Body:6:", req.body);
+  console.log("reached the page");
   try {
     const { error } = validate(req.body);
     if (error)

@@ -17,7 +17,9 @@ const Main = () => {
   const handleSubmit = async () => {
     const payload = {
       language: "cpp",
-      code: questions[selectedQuestionIndex].code,
+      code:
+        questions[selectedQuestionIndex].code +
+        questions[selectedQuestionIndex].executionCode,
     };
 
     try {

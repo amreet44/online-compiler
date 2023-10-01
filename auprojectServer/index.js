@@ -11,13 +11,15 @@ connection();
 
 app.use(express.json());
 
-app.use(cors());
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
+});
 
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/gen", genRoutes);
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
